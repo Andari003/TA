@@ -64,7 +64,7 @@ class TypeController extends Controller
         $area_id = $request->area_id;
         $group_equipment_id = $request->group_equipment_id;
         $equipment_id = $request->equipment_id;
-        $user_id = $request->user_id;
+
 
         $orderCol = $request->order_col ? $request->order_col : 'id';
         $orderType = $request->order_type ? $request->order_type : 'asc';
@@ -74,7 +74,7 @@ class TypeController extends Controller
             if ($name && $name != '' && $name != 'null') {
                 $f->where('name', 'LIKE', '%' . $name . '%');
             }
-        })->where(function ($f) use ($division_id, $area_id, $group_equipment_id, $equipment_id, $user_id) {
+        })->where(function ($f) use ($division_id, $area_id, $group_equipment_id, $equipment_id) {
             if ($division_id && $division_id != '' && $division_id != 'null') {
                 $f->where('division_id', '=', $division_id);
             }
@@ -86,9 +86,6 @@ class TypeController extends Controller
             }
             if ($equipment_id && $equipment_id != '' && $equipment_id != 'null') {
                 $f->where('equipment_id', '=', $equipment_id);
-            }
-            if ($user_id && $user_id != '' && $user_id != 'null') {
-                $f->where('user_id', '=', $user_id);
             }
         })
 
@@ -163,9 +160,6 @@ class TypeController extends Controller
         $type->area_id = $request->area_id;
         $type->group_equipment_id = $request->group_equipment_id;
         $type->equipment_id = $request->equipment_id;
-        $type->user_id = Auth::user()->id;
-        $type->status = $request->status;
-        $type->alasan = $request->alasan;
         $type->save();
         if ($fileImage) {
             $image = new ImageFile();
@@ -227,9 +221,6 @@ class TypeController extends Controller
         $type->area_id = $request->area_id;
         $type->group_equipment_id = $request->group_equipment_id;
         $type->equipment_id = $request->equipment_id;
-        $type->user_id = $request->user_id;
-        $type->status = $request->status;
-        $type->alasan = $request->alasan;
         $type->save();
         return $this->success($type, 'update data success');
     }
