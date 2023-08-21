@@ -1,0 +1,1551 @@
+{
+	"info": {
+		"_postman_id": "4ecf5077-60cb-4ea8-bab1-51a34e5679ea",
+		"name": "PKL-PLTU",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25943336"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "getUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/user?page=1&limit=10&order_col=id&order_type",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"user"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "name",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "role_id",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "order_col",
+									"value": "id"
+								},
+								{
+									"key": "order_type",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "NewUser",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "feby3",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "feby3@email.com",
+									"type": "text"
+								},
+								{
+									"key": "role_id",
+									"value": "3",
+									"description": "dari table role",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/user",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "showUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/user/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "budi abcs",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "budi@email.com",
+									"type": "text"
+								},
+								{
+									"key": "role_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1234567",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "put",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/user/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/user/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GroupEquipment",
+			"item": [
+				{
+					"name": "getGroupEquipment",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/groupequipment?page=1&limit=10&order_col=id&order_type",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"groupequipment"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "order_col",
+									"value": "id"
+								},
+								{
+									"key": "order_type",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "NewGroupEquipment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "area_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "division_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Group Equipment 3",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Group Equipment ketiga",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/groupequipment",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"groupequipment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "showGroupEquipment",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/groupequipment/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"groupequipment",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateGroupEquipment",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "area_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "division_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "aihhhhhg",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "gfte;eyhyet",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/groupequipment/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"groupequipment",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DelGroup",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{base_url}}/api/groupequipment/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"groupequipment",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOption",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/groupequipment/getOption",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"groupequipment",
+								"getOption"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Area",
+			"item": [
+				{
+					"name": "get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{base_url}}/api/area",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"area"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "new",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Area 3",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Area ketiga",
+									"type": "text"
+								},
+								{
+									"key": "division_id",
+									"value": "3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/area",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"area"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/area/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"area",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "cobaa",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "s vjerguerh",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/area/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"area",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "del",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/area/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"area",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOption",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/area/getOption",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"area",
+								"getOption"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Division",
+			"item": [
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/division",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"division"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"disabled": true
+								},
+								{
+									"key": "order_col",
+									"value": "id",
+									"disabled": true
+								},
+								{
+									"key": "order_type",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "new",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "divisi 3",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Divisi ketiga",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/division",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"division"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/division/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"division",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "divisi 1",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "sd",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/division/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"division",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "del",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/division/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"division",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOption",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/division/getOption",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"division",
+								"getOption"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "equipment",
+			"item": [
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/equipment?page=1&limit=10&order_col=id&order_type",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"equipment"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "order_col",
+									"value": "id"
+								},
+								{
+									"key": "order_type",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "new",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "division_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "area_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "group_equipment_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Equipment 3",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Equipment ketiga",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/equipment",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"equipment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/equipment/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"equipment",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "ac asv",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "wemvger",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/equipment",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"equipment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "del",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/equipment/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"equipment",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOption",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/equipment/getOption",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"equipment",
+								"getOption"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Type",
+			"item": [
+				{
+					"name": "get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base_url}}/api/type?page=1&limit=10&order_col=id&order_type",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"type"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "order_col",
+									"value": "id"
+								},
+								{
+									"key": "order_type",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/type/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"type",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "division_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "area_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "group_equipment_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "equipment_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Type 1",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Type pertama",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "publish",
+									"type": "text"
+								},
+								{
+									"key": "alasan",
+									"value": "akan direview",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "content",
+									"type": "text"
+								},
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/type/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"type",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteType",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/type/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"type",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "division_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "area_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "group_equipment_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "equipment_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "coba pertama",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "coba dulu",
+									"type": "text"
+								},
+								{
+									"key": "alasan",
+									"value": "tidak ada",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "Publish",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "gambar",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Lenovo/Pictures/Artis/Dhizty Zara.jpeg"
+								},
+								{
+									"key": "video",
+									"type": "file",
+									"src": "/C:/Users/Lenovo/Downloads/WhatsApp Video 2023-03-02 at 22.55.17.mp4"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/type",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"type"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "feby@email.com",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/logout",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "delete",
+			"item": [
+				{
+					"name": "DeleteImage",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/images/deleteimages/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"images",
+								"deleteimages",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteVideo",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/videos/deletevideos/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"videos",
+								"deletevideos",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYTY5YmZmZjc0MTZhMmVmYjM0ODk1NDE5YzAzY2Y2YjMyNmM2MTg0ODY4MWQwMDM3Y2RiY2MxMTkwOTU5NjRkZTIyNzE4MWJhNmE5NGM4MzMiLCJpYXQiOjE2NzgwNzQ2MDkuMzE3NTM3LCJuYmYiOjE2NzgwNzQ2MDkuMzE3NTQ4LCJleHAiOjE3MDk2OTcwMDkuMzA5MDA0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.ppp5363dLxDu9l4WJb2BJgWXr37vIXjQU6KDIXUSIXw4gLDkFLm8s6t1OoMDCxM4lgyOSEtqBBjtR61HOtmoBvhOcLQuLwUGrCMZMWIyGe8bUYoEFS_u3YAx9xPQVD8iJsqGhIujVVYpuNYBZUNt0O6JD_uZfx7XALOayaEwlAfSIAgNwJ_wY0YTBcWdF_JTig3McWBXmgHoUUYU0evz51RJ5SJMFDmE6t-qtf8xe9b9AdURv5zd2fcOHYOf02NjBG7KAmgBw1RMqjGZZXoIA2W-cWtGRKB_VGNZxM6T_UGixuj8fMxDTdoayqQIb5pxT0V4PsdEUFmUCcsr1N4pnFh4UQVfbOT-X0K7nNmo8vB9K4yg3Ow1QzoEFnYQuXavVij6oQwg7AH6PKh8U4s1GNKHcQx5fU3A4kuU5O-WMyInY72rhlc49B2FTgwLe1vYdl_iSMcNouLET_OkEHl7TKhE6j5w6VRU2WZhB3igc3emM7CtAQx4Ynm9fuAJjKssMK_qub12vY1XdKq3n62aqW9J1X4cG5cOCsdSRrTeCBWoUAW5vlNh7LgNknDezIaR4rZeM3JuasmtYsSqCi6VDc0azrs1W8my_2wlcGEitcTu6IV32Kt2AwSKOUd1uF5M7quvoa5y4PW8od0YWHI5yp--l98gPH8A6NpueT0e1W8",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://127.0.0.1:8000"
+		},
+		{
+			"key": "test",
+			"value": "testsdasd"
+		}
+	]
+}
