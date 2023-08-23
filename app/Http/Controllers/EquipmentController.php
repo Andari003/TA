@@ -45,7 +45,6 @@ class EquipmentController extends Controller
         $description = $request->description;
         $division_id = $request->division_id;
         $area_id = $request->area_id;
-        $group_equipment_id = $request->group_equipment_id;
 
         $orderCol = $request->order_col ? $request->order_col : 'id';
         $orderType = $request->order_type ? $request->order_type : 'asc';
@@ -55,16 +54,14 @@ class EquipmentController extends Controller
             if ($name && $name != '' && $name != 'null') {
                 $f->where('name', 'LIKE', '%' . $name . '%');
             }
-        })->where(function ($f) use ($division_id, $area_id, $group_equipment_id) {
+        })->where(function ($f) use ($division_id, $area_id) {
             if ($division_id && $division_id != '' && $division_id != 'null') {
                 $f->where('division_id', '=', $division_id);
             }
             if ($area_id && $area_id != '' && $area_id != 'null') {
                 $f->where('area_id', '=', $area_id);
             }
-            if ($group_equipment_id && $group_equipment_id != '' && $group_equipment_id != 'null') {
-                $f->where('group_equipment_id', '=', $group_equipment_id);
-            }
+
         })
 
             ->orderBy($orderCol, $orderType)->paginate($limit);
@@ -174,16 +171,16 @@ class EquipmentController extends Controller
                 $f->where('name', 'LIKE', '%' . $name . '%');
             }
         })
-            ->where(function ($f) use ($divisiId, $areaId, $groupEq) {
+            ->where(function ($f) use ($divisiId, $areaId) {
                 if ($divisiId && $divisiId != '' && $divisiId != 'null') {
                     $f->where('division_id', '=', $divisiId);
                 }
                 if ($areaId && $areaId != '' && $areaId != 'null') {
                     $f->where('area_id', '=', $areaId);
                 }
-                if ($groupEq && $groupEq != '' && $groupEq != 'null') {
-                    $f->where('group_equipment_id', '=', $groupEq);
-                }
+                // if ($groupEq && $groupEq != '' && $groupEq != 'null') {
+                //     $f->where('group_equipment_id', '=', $groupEq);
+                // }
             })
 
             ->orderBy($orderCol, $orderType)->get();

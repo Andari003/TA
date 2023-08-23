@@ -13,15 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('transaksis', function (Blueprint $table) {
 
-            $table->unsignedBigInteger('division_id')->nullable()->after("id");
-             $table->foreign('division_id')
-                ->references('id')
-                ->on('divisions')
-                ->onUpdate('cascade')->onDelete('cascade');
-
-        });
 
         Schema::table('areas', function (Blueprint $table) {
 
@@ -33,26 +25,11 @@ return new class extends Migration
 
         });
 
-        Schema::table('group_equipment', function (Blueprint $table) {
 
-            $table->unsignedBigInteger('division_id')->nullable()->after("id");
-            $table->unsignedBigInteger('area_id')->nullable()->after("id");
-             $table->foreign('division_id')
-                ->references('id')
-                ->on('divisions')
-                ->onUpdate('cascade')->onDelete('cascade');
-
-             $table->foreign('area_id')
-                ->references('id')
-                ->on('areas')
-                ->onUpdate('cascade')->onDelete('cascade');
-
-        });
 
         Schema::table('equipment', function (Blueprint $table) {
              $table->unsignedBigInteger('division_id')->nullable()->after("id");
                 $table->unsignedBigInteger('area_id')->nullable()->after("id");
-            $table->unsignedBigInteger('group_equipment_id')->nullable()->after("id");
 
              $table->foreign('division_id')
                 ->references('id')
@@ -64,17 +41,13 @@ return new class extends Migration
                 ->on('areas')
                 ->onUpdate('cascade')->onDelete('cascade');
 
-            $table->foreign('group_equipment_id')
-                ->references('id')
-                ->on('group_equipment')
-                ->onUpdate('cascade')->onDelete('cascade');
+
 
         });
         Schema::table('type', function (Blueprint $table) {
 
             $table->unsignedBigInteger('division_id')->nullable()->after("id");
                 $table->unsignedBigInteger('area_id')->nullable()->after("id");
-            $table->unsignedBigInteger('group_equipment_id')->nullable()->after("id");
             $table->unsignedBigInteger('equipment_id')->nullable()->after("id");
             $table->text('content')->nullable()->after("description");
 
@@ -91,10 +64,7 @@ return new class extends Migration
                 ->references('id')
                 ->on('areas')
                 ->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('group_equipment_id')
-                ->references('id')
-                ->on('group_equipment')
-                ->onUpdate('cascade')->onDelete('cascade');
+
 
         });
 

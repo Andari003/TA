@@ -51,6 +51,43 @@ class TypeController extends Controller
         }
 
     }
+
+    public function contentVideoUpload(Request $request)
+    {
+        $request->validate(
+            [
+                'path' => 'required|string',
+                'file' => 'required|mimes:jpg,jpeg,png,bmp |max:4048',
+            ]
+        );
+
+        $path  = $request->get('path');
+        $successStatus = false;
+        $file_url = null;
+
+        if( $request->file('file'))
+        {
+            $hash = Str::random(30);
+            $extension = '.'.$request->file('file')->guessExtension();
+
+            $filenameClient = $hash.$extension;
+            $request->file('file')->storeAs($path, $filenameClient, $disk = 'videos');
+
+            $file_path = Storage::disk('videos')->path($path, true). '/'.$filenameClient;
+            if (file_exists($file_path)) {
+                $file_url = url('videos/'.$path.'/'.$filenameClient);
+                $successStatus = true;
+            }
+        }
+
+        if (!$successStatus){
+            return $this->error('ERROR.FILE_NOT_FOUND', 'File Upload not found', 500);
+        } else {
+            $data['file_url'] = $file_url;
+            return $this->success($data,"Retrieved data successfully");
+        }
+
+    }
     /**
      * Display a listing of the resource.
      *
@@ -62,7 +99,6 @@ class TypeController extends Controller
         $name = $request->name;
         $division_id = $request->division_id;
         $area_id = $request->area_id;
-        $group_equipment_id = $request->group_equipment_id;
         $equipment_id = $request->equipment_id;
 
 
@@ -70,19 +106,16 @@ class TypeController extends Controller
         $orderType = $request->order_type ? $request->order_type : 'asc';
 
 
-        $type = Type::with('division', 'area','groupEquipment', 'equipment', 'images', 'videos')->where(function ($f) use ($name) {
+        $type = Type::with('division', 'area', 'equipment', 'images', 'videos')->where(function ($f) use ($name) {
             if ($name && $name != '' && $name != 'null') {
                 $f->where('name', 'LIKE', '%' . $name . '%');
             }
-        })->where(function ($f) use ($division_id, $area_id, $group_equipment_id, $equipment_id) {
+        })->where(function ($f) use ($division_id, $area_id, $equipment_id) {
             if ($division_id && $division_id != '' && $division_id != 'null') {
                 $f->where('division_id', '=', $division_id);
             }
             if ($area_id && $area_id != '' && $area_id != 'null') {
                 $f->where('area_id', '=', $area_id);
-            }
-            if ($group_equipment_id && $group_equipment_id != '' && $group_equipment_id != 'null') {
-                $f->where('group_equipment_id', '=', $group_equipment_id);
             }
             if ($equipment_id && $equipment_id != '' && $equipment_id != 'null') {
                 $f->where('equipment_id', '=', $equipment_id);
@@ -158,7 +191,6 @@ class TypeController extends Controller
         $type->content = $request->content;
         $type->division_id = $request->division_id;
         $type->area_id = $request->area_id;
-        $type->group_equipment_id = $request->group_equipment_id;
         $type->equipment_id = $request->equipment_id;
         $type->save();
         if ($fileImage) {
@@ -188,7 +220,7 @@ class TypeController extends Controller
      */
     public function show($id)
     {
-        $type = Type::with(['division', 'area','groupEquipment', 'equipment', 'images', 'videos'])->findOrFail($id);
+        $type = Type::with(['division', 'area', 'equipment', 'images', 'videos'])->findOrFail($id);
 
         return $this->success($type, 'get record success');
     }
@@ -219,7 +251,6 @@ class TypeController extends Controller
         $type->content = $request->content;
         $type->division_id = $request->division_id;
         $type->area_id = $request->area_id;
-        $type->group_equipment_id = $request->group_equipment_id;
         $type->equipment_id = $request->equipment_id;
         $type->save();
         return $this->success($type, 'update data success');

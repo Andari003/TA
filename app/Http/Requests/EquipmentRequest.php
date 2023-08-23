@@ -29,7 +29,6 @@ class EquipmentRequest extends BaseApiRequest
                 'description' => 'required',
                 'division_id' => 'required|integer|exists:divisions,id',
                 'area_id' => 'required|integer|exists:areas,id',
-                'group_equipment_id' => 'required|integer|exists:group_equipment,id',
         ];
     }
 }
