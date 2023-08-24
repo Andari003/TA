@@ -50,7 +50,7 @@ class EquipmentController extends Controller
         $orderType = $request->order_type ? $request->order_type : 'asc';
 
 
-        $equipment = Equipment::with('division','area','groupEquipment')->where(function ($f) use ($name) {
+        $equipment = Equipment::with('division','area')->where(function ($f) use ($name) {
             if ($name && $name != '' && $name != 'null') {
                 $f->where('name', 'LIKE', '%' . $name . '%');
             }
@@ -96,7 +96,6 @@ class EquipmentController extends Controller
         $equipment->description = $request->description;
         $equipment->division_id = $request->division_id;
         $equipment->area_id = $request->area_id;
-        $equipment->group_equipment_id = $request->group_equipment_id;
         $equipment->save();
         return $this->success($equipment, 'save data success');
     }
@@ -139,7 +138,6 @@ class EquipmentController extends Controller
         $equipment->description = $request->description;
         $equipment->division_id = $request->division_id;
         $equipment->area_id = $request->area_id;
-        $equipment->group_equipment_id = $request->group_equipment_id;
         $equipment->save();
         return $this->success($equipment, 'update data success');
     }
@@ -161,7 +159,6 @@ class EquipmentController extends Controller
     {
         $divisiId =  $request->division_id;
         $areaId =  $request->area_id;
-        $groupEq =  $request->group_equipment_id;
         $name = $request->name;
         $orderCol = $request->order_col ? $request->order_col : 'id';
         $orderType = $request->order_type ? $request->order_type : 'asc';

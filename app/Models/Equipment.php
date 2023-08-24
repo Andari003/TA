@@ -9,7 +9,7 @@ class Equipment extends Model
 {
     use HasFactory;
     protected $table = "equipment";
-    protected $fillable=['division_id','area_id','group_equipment_id','name','description'];
+    protected $fillable=['division_id','area_id','name','description'];
     protected $guarded=[];
 
     public function division(): BelongsTo
@@ -31,10 +31,6 @@ class Equipment extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function groupEquipment(): BelongsTo
-    {
-        return $this->belongsTo(GroupEquipment::class);
-    }
 
     public function type(){
         return $this->hasMany(Type::class);

@@ -26,17 +26,9 @@ return new class extends Migration
         ]);
          Role::create([
             'name'=>'admin',
-            'description'=>'Adimin',
+            'description'=>'Admin',
         ]);
-         Role::create([
-            'name'=>'contributor',
-            'description'=>'Contributor',
-        ]);
-         Role::create([
-            'name'=>'user',
-            'description'=>'User',
-        ]);
-
+         
 
 
     }

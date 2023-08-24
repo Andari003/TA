@@ -10,7 +10,7 @@ class Type extends Model
 {
     use HasFactory;
     protected $table = "type";
-    protected $fillable=['division_id','area_id','group_equipment_id','equipment_id','name','description','content','status','user_id','alasan'];
+    protected $fillable=['division_id','area_id','equipment_id','name','description','content'];
     protected $guarded=[];
 
     public function images(): MorphMany
@@ -47,10 +47,7 @@ class Type extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function groupEquipment(): BelongsTo
-    {
-        return $this->belongsTo(GroupEquipment::class);
-    }
+
     /**
      * Get the user that owns the type
      *
